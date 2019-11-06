@@ -1,4 +1,4 @@
-<%= simple_form_for(@restaurant) do |f| %>
+<%= simple_form_for [@restaurant] do |f| %>
   <!-- make our errors appear -->
   <% if @restaurant.errors.any? %>
     <div class="errors-container">
@@ -16,3 +16,4 @@
   <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
   <%= f.submit "add restaurant", class: "btn btn-primary" %>
 <% end %>
+<p><%= link_to "Go back to homepage", restaurants_path %></p>
