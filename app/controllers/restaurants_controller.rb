@@ -5,12 +5,15 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
-    raise
   end
 
   def create
     @restaurant = Restaurant.create(params_create)
     redirect_to restaurants_path
+  end
+
+  def show
+    @restaurant = Restaurant.find(params[:id].to_i)
   end
 
   private
